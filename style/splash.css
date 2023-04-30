@@ -1,0 +1,35 @@
+.img-splash {
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  position: absolute;
+  /* opacity: 0; */
+}
+.img-splash img {
+  width: 100vw;
+  height: 100vh;
+}
+.list-item {
+  opacity: 0;
+  transform-style: preserve-3d;
+
+  /* animation: fadeIn 2s linear 0s; */
+  /* perspective: 1600px; */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    /* transform: translate(1000px, 100%); */
+    transform: translateY(100%);
+    left: 50%;
+    perspective: 1600px;
+  }
+  to {
+    opacity: 3;
+    perspective: 1600px;
+    /* transform: translate(1000px, 50%); */
+    transform: translateY(50%);
+    left: 50%;
+  }
+}
