@@ -17,18 +17,14 @@
   /* position: absolute; */
   transform-style: preserve-3d;
   transform: translateY(0);
-}
 
-.list-wrapper {
-  perspective: 1600px;
-  transform: translateY(0);
   animation: fadeIn 2s;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    /* perspective: 1600px; */
+    perspective: 1600px;
     transform: translateY(100%);
 
     /* transform: translate(50%, 50%); */
@@ -37,7 +33,7 @@
   }
   to {
     opacity: 1;
-    /* perspective: 1600px; */
+    perspective: 1600px;
     transform: translateY(0);
 
     /* transform: translate(-50%, -50%); */

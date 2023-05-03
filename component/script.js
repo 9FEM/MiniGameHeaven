@@ -1,8 +1,4 @@
 const arrPic = [
-  "https://raw.githubusercontent.com/nugurejeil/sharingPhoto/main/jammanbo.png",
-  "https://raw.githubusercontent.com/nugurejeil/sharingPhoto/main/jammanbo.png",
-  "https://raw.githubusercontent.com/nugurejeil/sharingPhoto/main/jammanbo.png",
-  "https://raw.githubusercontent.com/nugurejeil/sharingPhoto/main/jammanbo.png",
   "https://raw.githubusercontent.com/nugurejeil/sharingPhoto/main/ev.png?raw=true",
   "https://raw.githubusercontent.com/nugurejeil/sharingPhoto/main/ev.png?raw=true",
   "https://raw.githubusercontent.com/nugurejeil/sharingPhoto/main/ev.png?raw=true",
@@ -42,6 +38,6 @@ document.addEventListener("click", function (event) {
   } else {
     currAngle -= angle;
   }
-  center.style.transform = `translateY(50%) rotateY(${currAngle}deg)`;
-  center.style.left = "50%";
+  center.style.transform = `rotateY(${currAngle}deg)`;
+  // center.style.left = "50%";
 });
