@@ -1,6 +1,6 @@
-const splashImg = document.querySelector(".img-splash");
-const cardList = document.querySelector(".list-item");
-const test = document.querySelector(".test");
+// const splashImg = document.querySelector(".img-splash");
+// const cardList = document.querySelector(".list-item");
+// const test = document.querySelector(".test");
 // splashImg.addEventListener("click", () => {
 //   splashImg.style.opacity = "0";
 
@@ -12,8 +12,3 @@ const test = document.querySelector(".test");
 //   //   cardList.style.transform = `transLate(-50%, -50%)`;
 //   // cardList.style.transform = `transLateY(0)`;
 // });
-
-test.addEventListener("click", () => {
-  cardList.style.animation = "fadeIn 2s";
-  // cardList.style.transition = "0.5s";
-});
