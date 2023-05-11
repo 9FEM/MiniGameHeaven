@@ -67,10 +67,8 @@ btnAutoRotate.addEventListener("click", () => {
     toggleAutoRotate = true;
     autoRotate();
   } else {
-    btnAutoRotate.textContent = "Running!!";
-
+    btnAutoRotate.textContent = "Run!!";
     toggleAutoRotate = false;
-
     autoRotate();
   }
 });
@@ -83,7 +81,7 @@ function autoRotate(start) {
       getCenterCell(false);
       currAngle += angle;
       listItem.style.transform = `rotateY(${currAngle}deg)`;
-      listItem.style.transition = "1s";
+      listItem.style.transition = "2s";
       setTimeout(autoRotate, 2000);
     } else {
       setTimeout(autoRotate, 1000);
@@ -95,37 +93,29 @@ function autoRotate(start) {
 
 //CenterCell 찾는 로직.
 for (let i = 0; i < containerList.length; i++) {
-  console.log("?");
   containerList[i].setAttribute("id", i);
 }
-// getCenterCell();
 let centerCount = 0;
+
 function getCenterCell(selectedBtn) {
   if (selectedBtn) {
     centerCell = listItem.children[++centerCount];
 
-    if (centerCount > 7) {
+    if (centerCount > containerList.length - 1) {
       centerCount = -1;
-
       centerCell = listItem.children[++centerCount];
     }
-    // console.log(centerCount);
-    // console.log(centerCell);
   } else {
     centerCell = listItem.children[--centerCount];
 
     if (centerCount < 0) {
-      centerCount = 8;
+      centerCount = containerList.length;
       centerCell = listItem.children[--centerCount];
     }
-    // console.log(centerCount);
-    // console.log(centerCell);
   }
   centerCell.style.backgroundColor = "red";
 
   containerList.forEach((el) => {
-    console.log(el.id);
-    console.log("centerCell" + centerCell.id);
     if (el.id !== centerCell.id) {
       el.style.backgroundColor = "white";
     }
@@ -145,5 +135,6 @@ document.addEventListener("click", function (event) {
     getCenterCell(true);
   }
   listItem.style.transform = `rotateY(${currAngle}deg)`;
+  listItem.style.transition = "2s";
   // center.style.left = "50%";
 });
