@@ -1,18 +1,22 @@
 .modal-screen {
+
 	position: absolute;
-	top: 25%;
-	left: 25%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
 	width: 1000px;
 	height: 600px;
 	background-color: rgb(255, 255, 255);
 	border-radius: 30px;
-	border: 10px solid rgba(0,0,0,0.5);
+	border: 10px solid rgba(0, 0, 0, 0.5);
 	/* transition: all 1s; */
 	opacity: 0;
 	z-index: 10;
 }
 
-.modal-close-btn, .game-close-btn {
+.modal-close-btn,
+.game-close-btn {
 	position: absolute;
 	top: 50px;
 	left: 50px;
@@ -22,6 +26,7 @@
 	border: none;
 	background-color: white;
 	cursor: pointer;
+	border-radius: 50px;
 }
 
 .game-screen {

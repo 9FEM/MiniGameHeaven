@@ -123,18 +123,40 @@ function getCenterCell(selectedBtn) {
 }
 
 //버튼으로 처리하거나 card-list로 수정해줘야함.
-document.addEventListener("click", function (event) {
-  // 화면 오른쪽을 눌렀을 경우
-  if (window.innerWidth / 2 < event.clientX) {
+// document.addEventListener("click", function (event) {
+//   // 화면 오른쪽을 눌렀을 경우
+//   if (window.innerWidth / 2 < event.clientX) {
+//     currAngle += angle;
+//     getCenterCell(false);
+
+//     // 화면 왼쪽을 눌렀을 경우
+//   } else {
+//     currAngle -= angle;
+//     getCenterCell(true);
+//   }
+//   listItem.style.transform = `rotateY(${currAngle}deg)`;
+//   listItem.style.transition = "2s";
+//   // center.style.left = "50%";
+// });
+
+function clickRotateEvent(direction) {
+  if (direction === "right") {
     currAngle += angle;
     getCenterCell(false);
-
-    // 화면 왼쪽을 눌렀을 경우
-  } else {
+  } else if (direction === "left") {
     currAngle -= angle;
     getCenterCell(true);
   }
   listItem.style.transform = `rotateY(${currAngle}deg)`;
   listItem.style.transition = "2s";
-  // center.style.left = "50%";
+}
+
+const btnLeft = document.querySelector(".btn-left");
+const btnRight = document.querySelector(".btn-right");
+
+btnLeft.addEventListener("click", () => {
+  clickRotateEvent("left");
+});
+btnRight.addEventListener("click", () => {
+  clickRotateEvent("right");
 });
