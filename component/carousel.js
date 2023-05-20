@@ -1,6 +1,5 @@
 const arrGame = [1, 2, 3, 4, 5, 6, 7, 8];
 const $listItem = document.querySelector(".list-item");
-const $cardList = document.querySelectorAll(".card-list");
 const $btnLeft = document.querySelector(".btn-left");
 const $btnRight = document.querySelector(".btn-right");
 const $btnAutoRotate = document.querySelector(".btn-auto-rotate");
@@ -16,6 +15,7 @@ initialize();
 
 // init함수.
 function initialize() {
+  // Game list생성
   arrGame.forEach((item) => {
     const elLi = document.createElement("li");
     elLi.classList.add("card-list");
@@ -23,6 +23,7 @@ function initialize() {
     $listItem.appendChild(elLi);
   });
 
+  // 초기 centercell설정.
   containerList = Array.from($listItem.children);
   carouselLength = $listItem.children.length;
   for (let i = 0; i < containerList.length; i++) {
@@ -32,6 +33,7 @@ function initialize() {
     carouselLength % 2 !== 0
       ? $listItem.children[parseInt(carouselLength / 2)]
       : $listItem.children[0];
+
   centerCellStyleChage(true);
 
   const items = document.querySelectorAll(".card-list");
@@ -103,6 +105,7 @@ function initialize() {
   }
 }
 
+// 회전시 centerCell 처리 함수.
 function getCenterCell(selectedBtn) {
   hadlePlayBtn(true, centerCell);
 
