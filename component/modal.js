@@ -21,10 +21,7 @@ const $main = document.querySelector("#app");
 
 containerList.forEach((el) => {
   el.addEventListener("click", () => {
-    console.log(el);
-    console.log(el.id);
     if (el === centerCell) {
-      console.log("test");
       onModal(el);
     } else {
       return;
