@@ -3,6 +3,7 @@
 @import "./splash.css";
 @import "./carousel.css";
 @import "./modal.css";
+@import "./games/firstGame.css";
 
 #app {
   width: 100vw;

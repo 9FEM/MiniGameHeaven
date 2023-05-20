@@ -19,16 +19,15 @@
 
 const $main = document.querySelector("#app");
 
-containerList.forEach((el) => {
-  el.addEventListener("click", () => {
-    if (el === centerCell) {
-      onModal(el);
-    } else {
-      return;
-    }
-    // onModal(el);
-  });
-});
+// containerList.forEach((el) => {
+//   el.addEventListener("click", () => {
+//     if (el === centerCell) {
+//       onModal(el);
+//     } else {
+//       return;
+//     }
+//   });
+// });
 
 function setGameScreen() {
   let newGameScreen = document.createElement("div");
@@ -67,7 +66,7 @@ function onModal(screen) {
   newModal.appendChild(closeModalBtn);
   newModal.className = "modal-screen";
   $main.appendChild(newModal);
-  setTimeout(setModalOn, 10);
+  setTimeout(setModalOn, 500);
   setTimeout(setGameScreen, 1100);
 }
 

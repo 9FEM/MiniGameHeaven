@@ -1,3 +1,4 @@
+import GameBox from "./gameBox.js";
 const arrGame = [1, 2, 3, 4, 5, 6, 7, 8];
 const $listItem = document.querySelector(".list-item");
 const $btnLeft = document.querySelector(".btn-left");
@@ -36,16 +37,16 @@ function initialize() {
 
   centerCellStyleChage(true);
 
-  const items = document.querySelectorAll(".card-list");
+  const cardItems = document.querySelectorAll(".card-list");
 
-  const radius = (items[0].offsetWidth * items.length) / 3.14 / 2;
+  const radius = (cardItems[0].offsetWidth * cardItems.length) / 3.14 / 2;
 
-  items.forEach((item, index) => {
+  cardItems.forEach((item, index) => {
     item.style.transform = `rotateY(${
-      (360 / items.length) * index
+      (360 / cardItems.length) * index
     }deg) translateZ(${radius}px)`;
   });
-  angle = 360 / items.length;
+  angle = 360 / cardItems.length;
 }
 
 {
@@ -65,7 +66,7 @@ function initialize() {
     // 가운데 클릭 시 play버튼 처리.
     element.addEventListener("click", () => {
       if (element === centerCell) {
-        hadlePlayBtn(false, element);
+        playBtnHadler(false, element);
       } else {
         return;
       }
@@ -107,7 +108,7 @@ function initialize() {
 
 // 회전시 centerCell 처리 함수.
 function getCenterCell(selectedBtn) {
-  hadlePlayBtn(true, centerCell);
+  playBtnHadler(true, centerCell);
 
   if (selectedBtn) {
     centerCell = $listItem.children[++centerCount];
@@ -162,7 +163,7 @@ $btnRight.addEventListener("click", () => {
 });
 
 // 플레이 버튼 생성,삭제 함수.
-function hadlePlayBtn(remove, center) {
+function playBtnHadler(remove, center) {
   if (!remove) {
     if (center.getElementsByClassName("btn-play").length > 0) {
       return;
@@ -172,7 +173,9 @@ function hadlePlayBtn(remove, center) {
     $playBtn.style.transition = "all 0.3s";
     $playBtn.setAttribute("id", `btn-${center.id}`);
     $playBtn.textContent = "Play!";
-    $playBtn.addEventListener("click", () => {});
+    $playBtn.addEventListener("click", () => {
+      clickPlayBtn(center.id);
+    });
     return center.appendChild($playBtn);
   } else if (remove) {
     if (center.querySelector(".btn-play") === null) {
@@ -180,4 +183,8 @@ function hadlePlayBtn(remove, center) {
     }
     center.querySelector(".btn-play").remove();
   }
+}
+function clickPlayBtn(centerId) {
+  const playGame = new GameBox(centerId);
+  playGame.onGame();
 }
