@@ -86,7 +86,6 @@ function initialize() {
       autoRotate();
     }
   });
-
   //자동회전함수
   function autoRotate() {
     console.log("running");

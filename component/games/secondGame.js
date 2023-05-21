@@ -1,6 +1,7 @@
 class SecondGame {
   init() {
-    console.log("second!");
+    alert("second!");
+    return;
   }
 }
 export default SecondGame;

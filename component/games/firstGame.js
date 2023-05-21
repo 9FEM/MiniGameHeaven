@@ -5,7 +5,6 @@ class FirstGame {
     const gameScreen = document.querySelector("#app");
 
     modalOpen.setAttribute("onclick", "openModal()");
-    console.log(gameScreen);
     gameScreen.appendChild(myModal);
     myModal.id = "myModal";
     myModal.className = "modal";
@@ -20,11 +19,16 @@ class FirstGame {
       .querySelector(".btn-confirm")
       .addEventListener("click", checkGuess);
     document.querySelector(".btn-close").addEventListener("click", closeModal);
-    console.log("game in");
+
     // 모달 닫기
     function closeModal() {
-      var modal = document.getElementById("myModal");
-      modal.style.display = "none";
+      myModal.style.transition = "all 2s";
+      myModal.style.visibility = "hidden";
+      myModal.style.opacity = "0";
+      myModal.innerHTML = "";
+      setTimeout(() => {
+        myModal.remove();
+      }, 2500);
     }
 
     // 게임 시작

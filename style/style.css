@@ -4,6 +4,7 @@
 @import "./carousel.css";
 @import "./modal.css";
 @import "./games/firstGame.css";
+@import "./games/thirdGame.css";
 
 #app {
   width: 100vw;
@@ -13,6 +14,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 body {

@@ -1,5 +1,6 @@
 import firstGame from "./games/firstGame.js";
 import secondGame from "./games/secondGame.js";
+import thirdGame from "./games/thirdGame.js";
 class GameBox {
   constructor(gameId) {
     this.gameId = gameId;
@@ -11,13 +12,17 @@ class GameBox {
       case 0:
         const game = new firstGame();
         game.init();
-        console.log("first game");
         break;
       case 1:
+        console.log(this.gameId);
         const game2 = new secondGame();
         game2.init();
+        break;
       case 2:
-        return "connect-four";
+        console.log(this.gameId);
+        const game3 = new thirdGame();
+        game3.init();
+        break;
       default:
         return "tic-tac-toe";
     }
