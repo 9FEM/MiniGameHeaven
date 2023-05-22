@@ -4,32 +4,31 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>미니게임천국</title>
 
-    <link rel="stylesheet" href="./style/reset.css" />
     <link rel="stylesheet" href="./style/style.css" />
-    <link rel="stylesheet" href="./style/splash.css" />
-    <link rel="stylesheet" href="./style/modal.css" />
   </head>
 
   <body>
     <article id="app">
-      <!-- <a class="img-splash">
-      <img src="https://i.ibb.co/Y8Z4FSh/bg-black.png" alt="bg-black" />
-    </a> -->
-      <button type="button" class="btn-auto-rotate">Auto Rotate</button>
-      <h2 class="test">미니게임천국</h2>
+      <div class="slpash-box">
+        <button class="btn-splash">Hello</button>
+      </div>
+
+      <!-- <h2 class="test">미니게임천국</h2> -->
       <div class="list-wrapper">
         <ul class="list-item"></ul>
-      </div>
-      <div class="direction-container">
-        <button class="btn-left">좌</button>
-        <button class="btn-right">우</button>
+        <div class="direction-container">
+          <button class="btn-left"><</button>
+          <button class="btn-auto-rotate">Auto Rotate</button>
+          <button class="btn-right">></button>
+        </div>
       </div>
     </article>
 
     <script src="./component/script.js"></script>
-    <script src="./component/modal.js"></script>
+    <script type="module" src="./component/carousel.js"></script>
+    <!-- <script src="./component/modal.js"></script> -->
     <script src="./component/splash.js"></script>
   </body>
 </html>
