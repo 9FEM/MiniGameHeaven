@@ -28,7 +28,7 @@ class FirstGame {
       myModal.innerHTML = "";
       setTimeout(() => {
         myModal.remove();
-      }, 2500);
+      }, 1000);
     }
 
     // 게임 시작

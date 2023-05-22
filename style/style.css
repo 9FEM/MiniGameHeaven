@@ -5,6 +5,7 @@
 @import "./modal.css";
 @import "./games/firstGame.css";
 @import "./games/thirdGame.css";
+@import "./games/snakeGame.css";
 
 #app {
   width: 100vw;

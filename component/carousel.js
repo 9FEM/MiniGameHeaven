@@ -1,5 +1,5 @@
 import GameBox from "./gameBox.js";
-const arrGame = [1, 2, 3, 4, 5, 6, 7, 8];
+const arrGame = ["SnakeGame", 2, "Drawing!", "number Up&Down", 5, 6, 7, 8];
 const $listItem = document.querySelector(".list-item");
 const $btnLeft = document.querySelector(".btn-left");
 const $btnRight = document.querySelector(".btn-right");

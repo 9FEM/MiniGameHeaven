@@ -1,6 +1,7 @@
 import firstGame from "./games/firstGame.js";
 import secondGame from "./games/secondGame.js";
 import thirdGame from "./games/thirdGame.js";
+import snakeGame from "./games/snakeGame.js";
 class GameBox {
   constructor(gameId) {
     this.gameId = gameId;
@@ -10,7 +11,7 @@ class GameBox {
 
     switch (parseInt(this.gameId)) {
       case 0:
-        const game = new firstGame();
+        const game = new snakeGame();
         game.init();
         break;
       case 1:
@@ -22,6 +23,10 @@ class GameBox {
         console.log(this.gameId);
         const game3 = new thirdGame();
         game3.init();
+        break;
+      case 3:
+        const game4 = new firstGame();
+        game4.init();
         break;
       default:
         return "tic-tac-toe";
