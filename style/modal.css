@@ -1,18 +1,15 @@
 .modal-screen {
-
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-
-	width: 1000px;
-	height: 600px;
 	background-color: rgb(255, 255, 255);
 	border-radius: 30px;
-	border: 10px solid rgba(0, 0, 0, 0.5);
-	/* transition: all 1s; */
+	border: 10px solid rgb(211, 84, 49, 0.3);
+	color: #e45535;
+	transition: all 1.5s;
 	opacity: 0;
-	z-index: 10;
+	z-index: 100;
 }
 
 .modal-close-btn,
