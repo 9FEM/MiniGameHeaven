@@ -5,49 +5,50 @@ class Modal {
   #height;
   #gameId
   #modal;
+  #splash;
 
   constructor(width, height, id) {
     this.#height = height;
     this.#width = width;
     this.#gameId = id;
     this.#modal = document.createElement('div');
+    this.#splash = document.createElement('div');
   }
 
   showModal() {
     const $main = document.querySelector("#app");
-    this.#modal = document.createElement("div");
+
     this.#modal.className = 'modal-screen';
     this.#modal.style.width = this.#width + 'px';
     this.#modal.style.height = this.#height + 'px';
-    this.#modal.innerHTML = `
+    this.#splash.className = 'splash-screen';
+    this.#splash.style.width = this.#width + 'px';
+    this.#splash.style.height = this.#height + 'px';
+    this.#splash.innerHTML = `
     <div class="loading-container">
 		<div class="loading"></div>
 		<div id="loading-text">loading</div>
 	</div>`;
+  this.#modal.appendChild(this.#splash);
   $main.appendChild(this.#modal);
   setTimeout(() => {
     this.#modal.style.opacity = 1;
+    this.#splash.style.opacity = 1;
   },10)
   setTimeout(() => {
     this.showGame();
   }, 1500)
   }
 
-  // async modalFadeIn() {
-  //   setTimeout(() => {
-  //     this.#modal.style.opacity = 1;
-  //   }, 10)
-  // }
-
   showGame() {
     const playGame = new GameBox(this.#gameId);
     playGame.onGame();
     setTimeout(() => {
-      this.#modal.style.opacity = 0;
+      this.#splash.style.opacity = 0;
     }, 500)
     setTimeout(() => {
-      this.#modal.remove();
-    }, 1500)
+      this.#splash.remove();
+    }, 2000)
   }
 }
 

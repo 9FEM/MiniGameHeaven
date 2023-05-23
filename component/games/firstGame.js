@@ -2,7 +2,7 @@ class FirstGame {
   init() {
     const myModal = document.createElement("div");
     const modalOpen = document.createElement("button");
-    const gameScreen = document.querySelector("#app");
+    const gameScreen = document.querySelector(".modal-screen");
 
     modalOpen.setAttribute("onclick", "openModal()");
     gameScreen.appendChild(myModal);
@@ -26,8 +26,9 @@ class FirstGame {
       myModal.style.visibility = "hidden";
       myModal.style.opacity = "0";
       myModal.innerHTML = "";
+      gameScreen.style.opacity = 0;
       setTimeout(() => {
-        myModal.remove();
+        gameScreen.remove();
       }, 1000);
     }
 
