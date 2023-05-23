@@ -1,4 +1,5 @@
 import GameBox from "./gameBox.js";
+import Modal from "./modal.js";
 const arrGame = ["SnakeGame", 2, "Drawing!", "number Up&Down", 5, 6, 7, 8];
 const $listItem = document.querySelector(".list-item");
 const $btnLeft = document.querySelector(".btn-left");
@@ -184,6 +185,8 @@ function playBtnHadler(remove, center) {
   }
 }
 function clickPlayBtn(centerId) {
-  const playGame = new GameBox(centerId);
-  playGame.onGame();
+  const modal = new Modal(1000, 640, centerId);
+  modal.showModal();
+  // const playGame = new GameBox(centerId);
+  // playGame.onGame();
 }

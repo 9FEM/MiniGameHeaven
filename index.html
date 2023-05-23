@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>미니게임천국</title>
 
-    <link rel="stylesheet" href="./style/style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>미니게임천국</title>
 
-  <body>
-    <article id="app">
-      <div class="slpash-box">
-        <button class="btn-splash">Hello</button>
+  <link rel="stylesheet" href="./style/style.css" />
+</head>
+
+<body>
+  <article id="app">
+    <div class="slpash-box">
+      <button class="btn-splash">Hello</button>
+    </div>
+
+    <!-- <h2 class="test">미니게임천국</h2> -->
+    <div class="list-wrapper">
+      <ul class="list-item"></ul>
+      <div class="direction-container">
+        <button class="btn-left">
+          < </button>
+            <button class="btn-auto-rotate">Auto Rotate</button>
+            <button class="btn-right">></button>
       </div>
+    </div>
+  </article>
 
-      <!-- <h2 class="test">미니게임천국</h2> -->
-      <div class="list-wrapper">
-        <ul class="list-item"></ul>
-        <div class="direction-container">
-          <button class="btn-left"><</button>
-          <button class="btn-auto-rotate">Auto Rotate</button>
-          <button class="btn-right">></button>
-        </div>
-      </div>
-    </article>
+  <script src="./component/script.js"></script>
+  <script type="module" src="./component/carousel.js"></script>
+  <!-- <script src="./component/modal.js"></script> -->
+  <script src="./component/splash.js"></script>
+</body>
 
-    <script src="./component/script.js"></script>
-    <script type="module" src="./component/carousel.js"></script>
-    <!-- <script src="./component/modal.js"></script> -->
-    <script src="./component/splash.js"></script>
-  </body>
 </html>
