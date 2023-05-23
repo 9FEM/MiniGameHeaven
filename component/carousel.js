@@ -185,7 +185,7 @@ function playBtnHadler(remove, center) {
   }
 }
 function clickPlayBtn(centerId) {
-  const modal = new Modal(2000, 1200, centerId);
+  const modal = new Modal(1000, 640, centerId);
   modal.showModal();
   // const playGame = new GameBox(centerId);
   // playGame.onGame();

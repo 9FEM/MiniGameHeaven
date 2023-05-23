@@ -1,8 +1,10 @@
+import Modal from "../modal.js";
+
 class snakeGame {
   init() {
     const $snakeGameDiv = document.createElement("div");
     $snakeGameDiv.setAttribute("id", "snake-myModal");
-    const $gameScreen = document.querySelector("#app");
+    const $gameScreen = document.querySelector(".modal-screen");
     let gameScreenCloseCheck = false;
     let score = 0;
 
@@ -13,7 +15,7 @@ class snakeGame {
           <span class="snake-btn-close">&times;</span>
         </div>
         <!-- Snake game code goes here -->
-        <canvas id="snakeCanvas" width="1000" height="600"></canvas>
+        <canvas id="snakeCanvas"></canvas>
       </div>`;
     $gameScreen.appendChild($snakeGameDiv);
 
@@ -34,6 +36,8 @@ class snakeGame {
       $snakeGameDiv.innerHTML = "";
       gameScreenCloseCheck = true;
       setTimeout(() => {
+        const modalClose = new Modal();
+        modalClose.closeGame();
         $snakeGameDiv.remove();
       }, 1000);
     }
@@ -47,7 +51,7 @@ class snakeGame {
       const ctx = canvas.getContext("2d");
 
       // Define the size of each cell in the grid
-      const cellSize = 20;
+      const cellSize = 5;
 
       // Calculate the number of rows and columns based on the canvas size and cell size
       const numRows = canvas.height / cellSize;
