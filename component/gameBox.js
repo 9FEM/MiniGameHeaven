@@ -7,29 +7,21 @@ class GameBox {
     this.gameId = gameId;
   }
   onGame() {
-    console.log(this.gameId);
-
     switch (parseInt(this.gameId)) {
-      case 0:
-        const game = new snakeGame();
-        game.init();
-        break;
       case 1:
-        console.log(this.gameId);
-        const game2 = new secondGame();
-        game2.init();
+        const snakeGamePlay = new snakeGame();
+        snakeGamePlay.init();
         break;
       case 2:
-        console.log(this.gameId);
-        const game3 = new thirdGame();
-        game3.init();
+        const paintGame = new thirdGame();
+        paintGame.init();
         break;
       case 3:
-        const game4 = new firstGame();
-        game4.init();
+        break;
+      case 4:
         break;
       default:
-        return "tic-tac-toe";
+        break;
     }
   }
 }

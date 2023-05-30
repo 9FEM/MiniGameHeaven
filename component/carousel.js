@@ -1,6 +1,19 @@
 import GameBox from "./gameBox.js";
 import Modal from "./modal.js";
-const arrGame = ["SnakeGame", 2, "Drawing!", "number Up&Down", 5, 6, 7, 8];
+const arrGame = [
+  "SnakeGame",
+  "Drawing!",
+  "Empty",
+  "Empty",
+  "Empty",
+  "Empty",
+  "Empty",
+  "Empty",
+  "Empty",
+  "Empty",
+  "Empty",
+  "Empty",
+];
 const $listItem = document.querySelector(".list-item");
 const $btnLeft = document.querySelector(".btn-left");
 const $btnRight = document.querySelector(".btn-right");
@@ -19,8 +32,11 @@ initialize();
 function initialize() {
   // Game list생성
   arrGame.forEach((item) => {
+    console.log(item);
     const elLi = document.createElement("li");
     elLi.classList.add("card-list");
+    // elLi.setAttribute("id", `${item}`);
+
     elLi.innerHTML = `<div>${item}</div>`;
     $listItem.appendChild(elLi);
   });
@@ -174,7 +190,7 @@ function playBtnHadler(remove, center) {
     $playBtn.setAttribute("id", `btn-${center.id}`);
     $playBtn.textContent = "Play!";
     $playBtn.addEventListener("click", () => {
-      clickPlayBtn(center.id);
+      clickPlayBtn(parseInt(center.id) + 1);
     });
     return center.appendChild($playBtn);
   } else if (remove) {
@@ -184,9 +200,20 @@ function playBtnHadler(remove, center) {
     center.querySelector(".btn-play").remove();
   }
 }
+
+// 모달 사이즈 설정, 호출 함수.
 function clickPlayBtn(centerId) {
-  const modal = new Modal(1000, 640, centerId);
-  modal.showModal();
-  // const playGame = new GameBox(centerId);
-  // playGame.onGame();
+  switch (centerId) {
+    case 1:
+      const snakeGame = new Modal(1000, 640, centerId);
+      snakeGame.showModal();
+      break;
+    case 2:
+      const paintGame = new Modal(1000, 800, centerId);
+      paintGame.showModal();
+      break;
+
+    default:
+      break;
+  }
 }

@@ -2,7 +2,7 @@ class thirdGame {
   init() {
     const testDiv = document.createElement("div");
     testDiv.classList.add("canvas-container");
-    const gameScreen = document.querySelector("#app");
+    const gameScreen = document.querySelector(".modal-screen");
     console.log(testDiv);
     gameScreen.appendChild(testDiv);
 

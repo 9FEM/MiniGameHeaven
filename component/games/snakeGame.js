@@ -29,6 +29,7 @@ class snakeGame {
 
       // Start the snake game
     }
+
     function closeModal() {
       $snakeGameDiv.style.transition = "all 2s";
       $snakeGameDiv.style.visibility = "hidden";
@@ -37,8 +38,8 @@ class snakeGame {
       gameScreenCloseCheck = true;
       setTimeout(() => {
         const modalClose = new Modal();
-        modalClose.closeGame();
         $snakeGameDiv.remove();
+        modalClose.closeGame();
       }, 1000);
     }
 
